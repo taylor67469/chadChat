@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const empRoutes = require("./empApi");
+const chadRoutes = require("./chadAPI");
 
-// Employee routes /api/employees
-router.use("/employees", empRoutes);
+// Chad routes /api/chads
+router.use("/chads", chadRoutes);
 
 
 module.exports = router;
