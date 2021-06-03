@@ -1,2 +1,1 @@
 # chadChat
-Chads only
