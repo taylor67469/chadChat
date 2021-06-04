@@ -1,45 +1,26 @@
-const { Model, DataTypes } = require('sequelize');
-// const sequelize = require('../config/connection');
+const mongoose = require("mongoose");
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: [true, 'Name is empty'],
+    unique: true,   
+  },
+  email: {
+    type: String,
+    required: [true, 'email is empty'],
+    unique: true, 
+    validate: {
+        validator: () => Promise.resolve(false),
+        message: 'Email validation failed'
+      }
+  },
+  password: {
+    type: String,
+    required: [true, 'Password is empty'],
+  },
 
-class User extends Model { }
+});
 
-User.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true,
-            },
-        },
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [8],
-            },
-        },
-    },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'User',
-    }
-
-);
-
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
