@@ -1,24 +1,35 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React, {useState, useEffect} from 'react'
+import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import Forum from "./pages/forum"
 import Signup from "./pages/signup"
 import ForumPost from "./pages/forumPost"
 import Home from "./pages/home"
+import API from "./utils/API"
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);  //we need Xavier's code to set the loggedIn variable
+  // useEffect(()=>{
+  //   hitRoute();
+  // }, [])
+  // function hitRoute(){
+  //   API.getHomeRoute().then(res=>{
+  //     console.log("we are hitting the home route");
+  //   })
+  // }
   return (
     <Router>
     <div>
       <Switch>
         <Route exact path={"/"}>
-            <Forum ></Forum>
+          {loggedIn ? <Redirect to ="/home"/> : <Signup/>}
         </Route>
         <Route exact path={"/home"}>
-            <Home ></Home>
+            {loggedIn ? <Home/> :<Redirect to = '/signup'/>}
         </Route>
         <Route exact path={"/signup"}>
-          <Signup></Signup>
+        {loggedIn ? <Redirect to = '/home'/>:<Signup/>}
         </Route>
         <Route exact path={"/forumpost"}>
-          <ForumPost></ForumPost>
+        {loggedIn ? <ForumPost/> :<Redirect to = '/signup'/>}
         </Route>
       </Switch>
     </div>
