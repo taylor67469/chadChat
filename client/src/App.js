@@ -10,6 +10,9 @@ function App() {
         <Route exact path={"/"}>
             <Forum ></Forum>
         </Route>
+        <Route exact path={"/home"}>
+            <Home ></Home>
+        </Route>
         <Route exact path={"/signup"}>
           <Signup></Signup>
         </Route>
