@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Forum from "./pages/forum"
 import Signup from "./pages/signup"
 import ForumPost from "./pages/forumPost"
+import Home from "./pages/home"
 function App() {
   return (
     <Router>
