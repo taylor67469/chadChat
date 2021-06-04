@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const empController = require("../../controllers/chadController")
-router.route("/")
-    .get(empController.findAllEmp)
+const chadController = require("../../controllers/chadController")
+// router.route("/")
+//     .get(chadController.findAllEmp)
 
 
 module.exports = router;
