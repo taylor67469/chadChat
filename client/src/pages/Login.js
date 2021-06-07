@@ -1,8 +1,8 @@
 import React from "react";
-import Form from "../component/log.js";
+import LoginSheet from "../component/log.js";
 
-function Login() {
-  return <Form />;
+function LoginPage() {
+  return <LoginSheet/>;
 }
 
-export default Login;
+export default LoginPage;
