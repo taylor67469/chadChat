@@ -18,8 +18,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Password is empty'],
   },
-
-});
+  posts:[{
+    type:mongoose.Schema.Types.ObjectId,
+    ref: "ForumPost"
+}]
+}); 
 
 const User = mongoose.model("User", userSchema);
 
