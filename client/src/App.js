@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import Forum from "./pages/forum"
-import Signup from "./pages/signup"
+import Signup from "./pages/Signup"
 import ForumPost from "./pages/forumPost"
+import Form from "./component/log";
+import Login from "./pages/Login";
+import ChatRoom from "./pages/chatroom";
 import Home from "./pages/home"
 import API from "./utils/API"
 function App() {
@@ -17,6 +20,23 @@ function App() {
   // }
   return (
     <Router>
+      <div>
+        <Switch>
+          <Route exact path={"/"}>
+            <Forum ></Forum>
+          </Route>
+          <Route exact path={"/signup"}>
+            <Signup></Signup>
+          </Route>
+          <Route exact path={"/forumpost"}>
+            <ForumPost></ForumPost>
+          </Route>
+          <Route path={"/login"}>
+            <Login></Login>
+          </Route>
+          <Route exact path="/:roomId" component={ChatRoom} />
+        </Switch>
+      </div>
     <div>
       <Switch>
         <Route exact path={"/"}>
