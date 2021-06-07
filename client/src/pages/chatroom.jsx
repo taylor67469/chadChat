@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import useChat from "../utils/usechat"
 // import "./Home.css";
 
 const Home = () => {
@@ -19,7 +19,7 @@ const Home = () => {
         onChange={handleRoomNameChange}
         className="text-input-field"
       />
-      <Link to={`/${roomName}`} className="enter-room-button">
+      <Link to={`/room:${roomName}`} className="enter-room-button">
         Join room
       </Link>
     </div>
