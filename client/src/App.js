@@ -8,9 +8,12 @@ import ChatRoom from "./pages/chatroom";
 import Home from "./pages/home"
 import API from "./utils/API"
 import Navbar from "./pages/navbar"
-
+import Room from "./pages/room"
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);  //we need Xavier's code to set the loggedIn variable
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [chat, setChat] = useState(true);
+
+    //we need Xavier's code to set the loggedIn variable
   // useEffect(()=>{
   //   hitRoute();
   // }, [])
@@ -39,7 +42,8 @@ function App() {
           <Route exact path={"/login"}>
           <Login/>
           </Route>
-          <Route exact path="/:roomId" component={ChatRoom} />
+          <Route exact path="/room" component={ChatRoom} />
+          <Route exact path="/room:roomId" component={Room} />
         </Switch>
       </div>
     {/* <div>

@@ -46,3 +46,4 @@ const ChatRoom = (props) => {
     </div>
   );
 };
+export default ChatRoom;
