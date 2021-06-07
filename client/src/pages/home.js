@@ -4,7 +4,7 @@ function Home(){
     return(
         <>
         {/* start of nav */}
-        <br/>
+        {/* <br/>
         <nav className="navbar navbar-expand-lg navbar-light navstyle">
     <div className="container-fluid">
       <a className="nav-link active navtext" href="/some/valid/uri">ChadChat</a>
@@ -29,7 +29,7 @@ function Home(){
       </div>
     </div>
   </nav>
-  <br></br>
+  <br></br> */}
   {/* end of nav */}
 
   <div className="container-fluid main-center">

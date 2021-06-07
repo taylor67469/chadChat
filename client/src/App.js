@@ -8,6 +8,8 @@ import Login from "./pages/Login";
 import ChatRoom from "./pages/chatroom";
 import Home from "./pages/home"
 import API from "./utils/API"
+import Navbar from "./pages/navbar"
+
 function App() {
   const [loggedIn, setLoggedIn] = useState(true);  //we need Xavier's code to set the loggedIn variable
   // useEffect(()=>{
@@ -21,6 +23,7 @@ function App() {
   return (
     <Router>
       <div>
+      <Navbar />
         <Switch>
           <Route exact path={"/"}>
           {loggedIn ? <Home/> :<Redirect to = '/signup'/>}
