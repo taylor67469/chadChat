@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-d
 import Forum from "./pages/forum"
 import Signup from "./pages/signup"
 import ForumPost from "./pages/forumPost"
-import Form from "./component/log";
 import Login from "./pages/Login";
 import ChatRoom from "./pages/chatroom";
 import Home from "./pages/home"
@@ -11,7 +10,7 @@ import API from "./utils/API"
 import Navbar from "./pages/navbar"
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);  //we need Xavier's code to set the loggedIn variable
+  const [loggedIn, setLoggedIn] = useState(false);  //we need Xavier's code to set the loggedIn variable
   // useEffect(()=>{
   //   hitRoute();
   // }, [])

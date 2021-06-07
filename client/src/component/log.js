@@ -1,62 +1,63 @@
-import React, { Component } from "react";
+import React, { useEffect,useState } from "react";
 
 
-class Form extends Component {
+const Login=()=>{
   // Setting the component's initial state
-  state = {
-    firstName: "",
-    lastName: ""
-  };
+  // state = {
+  //   username: "",
+  //   password: ""
+  // };
+  const [login,setLogin]=useState({
+    username:"",
+    password:""
+  })
 
-  handleInputChange = event => {
+  const handleInputChange = (event) => {
     // Getting the value and name of the input which triggered the change
     const { name, value } = event.target;
 
-    // Updating the input's state
-    this.setState({
-      [name]: value
-    });
+    // Updating the input's state\
+    setLogin({...login, [name]:value})
+    // this.setState({
+    //   [name]: value
+    // });
   };
 
-  handleFormSubmit = event => {
+  const handleFormSubmit = (event) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
 
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-    alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
-    this.setState({
-      firstName: "",
-      lastName: ""
+    alert(`Hello ${login.username}`);
+    setLogin({
+      username: "",
     });
   };
-
-  render() {
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
         <p>
-          Hello {this.state.firstName} {this.state.lastName}
+          Hello {login.username}
         </p>
         <form className="form">
           <input
-            value={this.state.firstName}
+            value={login.username}
             name="firstName"
-            onChange={this.handleInputChange}
+            onChange={handleInputChange}
             type="text"
-            placeholder="First Name"
+            placeholder="Username"
           />
           <input
-            value={this.state.lastName}
-            name="lastName"
-            onChange={this.handleInputChange}
-            type="text"
-            placeholder="Last Name"
+            value={login.password}
+            name="password"
+            onChange={handleInputChange}
+            type="password"
+            placeholder="password"
           />
-          <button onClick={this.handleFormSubmit}>Submit</button>
+          <button onClick={handleFormSubmit}>Submit</button>
         </form>
       </div>
     );
   }
-}
 
-export default Form;
+export default Login;
