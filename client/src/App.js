@@ -6,7 +6,7 @@ import ForumPost from "./pages/forumPost"
 import Home from "./pages/home"
 import API from "./utils/API"
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);  //we need Xavier's code to set the loggedIn variable
+  const [loggedIn, setLoggedIn] = useState(true);  //we need Xavier's code to set the loggedIn variable
   // useEffect(()=>{
   //   hitRoute();
   // }, [])
