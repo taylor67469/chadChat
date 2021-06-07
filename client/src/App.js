@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import Forum from "./pages/forum"
-import Signup from "./pages/Signup"
+import Signup from "./pages/signup"
 import ForumPost from "./pages/forumPost"
 import Form from "./component/log";
 import Login from "./pages/Login";
@@ -9,7 +9,7 @@ import ChatRoom from "./pages/chatroom";
 import Home from "./pages/home"
 import API from "./utils/API"
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);  //we need Xavier's code to set the loggedIn variable
+  const [loggedIn, setLoggedIn] = useState(true);  //we need Xavier's code to set the loggedIn variable
   // useEffect(()=>{
   //   hitRoute();
   // }, [])
@@ -23,21 +23,24 @@ function App() {
       <div>
         <Switch>
           <Route exact path={"/"}>
-            <Forum ></Forum>
+          {loggedIn ? <Home/> :<Redirect to = '/signup'/>}
           </Route>
           <Route exact path={"/signup"}>
-            <Signup></Signup>
+          {loggedIn ? <Redirect to = '/home'/>:<Signup/>}
           </Route>
+          <Route exact path={"/home"}>
+            {loggedIn ? <Home/> :<Redirect to = '/signup'/>}
+        </Route>
           <Route exact path={"/forumpost"}>
-            <ForumPost></ForumPost>
+          {loggedIn ? <ForumPost/> :<Redirect to = '/signup'/>}
           </Route>
-          <Route path={"/login"}>
-            <Login></Login>
+          <Route exact path={"/login"}>
+          <Login/>
           </Route>
           <Route exact path="/:roomId" component={ChatRoom} />
         </Switch>
       </div>
-    <div>
+    {/* <div>
       <Switch>
         <Route exact path={"/"}>
           {loggedIn ? <Redirect to ="/home"/> : <Signup/>}
@@ -52,7 +55,7 @@ function App() {
         {loggedIn ? <ForumPost/> :<Redirect to = '/signup'/>}
         </Route>
       </Switch>
-    </div>
+    </div> */}
     </Router>
   );
 }
