@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-d
 import Forum from "./pages/forum"
 import Signup from "./pages/signup"
 import ForumPost from "./pages/forumPost"
+import Form from "./component/log";
+import Login from "./pages/Login";
+import ChatRoom from "./pages/chatroom";
 import Home from "./pages/home"
 import API from "./utils/API"
 function App() {
@@ -17,7 +20,27 @@ function App() {
   // }
   return (
     <Router>
-    <div>
+      <div>
+        <Switch>
+          <Route exact path={"/"}>
+          {loggedIn ? <Home/> :<Redirect to = '/signup'/>}
+          </Route>
+          <Route exact path={"/signup"}>
+          {loggedIn ? <Redirect to = '/home'/>:<Signup/>}
+          </Route>
+          <Route exact path={"/home"}>
+            {loggedIn ? <Home/> :<Redirect to = '/signup'/>}
+        </Route>
+          <Route exact path={"/forumpost"}>
+          {loggedIn ? <ForumPost/> :<Redirect to = '/signup'/>}
+          </Route>
+          <Route exact path={"/login"}>
+          <Login/>
+          </Route>
+          <Route exact path="/:roomId" component={ChatRoom} />
+        </Switch>
+      </div>
+    {/* <div>
       <Switch>
         <Route exact path={"/"}>
           {loggedIn ? <Redirect to ="/home"/> : <Signup/>}
@@ -32,7 +55,7 @@ function App() {
         {loggedIn ? <ForumPost/> :<Redirect to = '/signup'/>}
         </Route>
       </Switch>
-    </div>
+    </div> */}
     </Router>
   );
 }
