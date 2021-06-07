@@ -1,88 +1,97 @@
-import React, { Component } from "react";
+import React, {useEffect,useState } from "react";
+import axios from "axios";
 
-
-class Form extends Component {
+const Signup =()=>{
   // Setting the component's initial state
-  state = {
-    firstName: "",
-    lastName: "",
+
+  const [register,setRegister]=useState({
+    username:"",
     email:"",
-    password:"",
-    city:""
-  };
+    password:""
+  })
+  // state = {
+  //   username:"",
+  //   email:"",
+  //   password:"",
+  // };
 
-  handleInputChange = event => {
+  const HandleInputChange = (event) => {
     // Getting the value and name of the input which triggered the change
-    const { name, value } = event.target;
-
     // Updating the input's state
-    this.setState({
-      [name]: value
-    });
+    // useEffect((event)=>{
+      //let loginCred = {}
+      const { name, value } = event.target;
+      // console.log(name);
+      // console.log(value);
+      setRegister({...register, [name]:value})
+      // setRegister({
+      //   [name]: value
+      // });
+    // },[])
+    
   };
 
-  handleFormSubmit = event => {
+  const HandleFormSubmit = (event) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-
+    
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-    alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
-    this.setState({
-      firstName: "",
-      lastName: ""
+    alert(`Hello ${register.username}`);
+    setRegister({
+      username:""
     });
   };
 
-  render() {
+  // const render=() =>{
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
         <p>
-          Hello {this.state.firstName} {this.state.lastName}
+          Hello {register.username}
         </p>
         <form className="form">
           <input
-            value={this.state.firstName}
-            name="firstName"
-            onChange={this.handleInputChange}
+            value={register.username}
+            name="username"
+            onChange={HandleInputChange}
             type="text"
-            placeholder="First Name"
+            placeholder="Username"
           />
-          <input
+          {/* <input
             value={this.state.lastName}
             name="lastName"
             onChange={this.handleInputChange}
             type="text"
             placeholder="Last Name"
-          />
+          /> */}
           <input
-            value={this.state.email}
+            value={register.email}
             name="email"
-            onChange={this.handleInputChange}
+            onChange={HandleInputChange}
             type="text"
             placeholder="Email"
           />
           <input
-            value={this.state.password}
+            value={register.password}
             name="password"
-            onChange={this.handleInputChange}
-            type="text"
+            onChange={HandleInputChange}
+            type="password"
             placeholder="Password"
           />
-          <input
+          {/* <input
             value={this.state.city}
             name="city"
             onChange={this.handleInputChange}
             type="text"
             placeholder="city"
-          />
+          /> */}
           
           
-          <button onClick={this.handleFormSubmit}>Submit</button>
+          <button onClick={HandleFormSubmit}>Submit</button>
         </form>
       </div>
     );
   }
-}
+// }
 
-export default Form;
+export default Signup;
