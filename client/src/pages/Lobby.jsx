@@ -1,13 +1,13 @@
 import React from "react";
-
+import {useParams} from 'react-router-dom';
 // import "./ChatRoom.css";
 import useChat from "../utils/usechat";
 
-const Lobby = (props) => {
-  const { roomId } = props.match.params;
+const Lobby = () => {
+  // console.log(useParams());
+  const {roomId}  = useParams();
   const { messages, sendMessage } = useChat(roomId);
   const [newMessage, setNewMessage] = React.useState("");
-
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value);
   };
@@ -19,6 +19,7 @@ const Lobby = (props) => {
 
   return (
     <div className="chat-room-container">
+      <a href="/room">Go Back to go to different room</a>
       <h1 className="room-name">Room: {roomId}</h1>
       <div className="messages-container">
         <ol className="messages-list">

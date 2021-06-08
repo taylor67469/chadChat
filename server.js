@@ -3,14 +3,10 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 4000;
-var http = require('http').createServer();
+var http = require('http').createServer(app);
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
 const bodyParser = require('body-parser')
-const io = require("socket.io")(http, {
-  cors: {
-    origin: "*",
-  },
-});
+const io = require("socket.io")(http);
 app.use(bodyParser.json())
 
 // Define middleware here
@@ -50,6 +46,7 @@ io.on("connection", (socket) => {
 //   })
 // });
 
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+http.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
+  console.log(`🌎  ==> IO Server now listening on PORT ${PORT}!`);
 });

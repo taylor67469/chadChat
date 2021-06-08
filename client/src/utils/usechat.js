@@ -5,11 +5,10 @@ const NEW_CHAT_MESSAGE_EVENT = "newChatMessage"; // Name of the event
 const SOCKET_SERVER_URL = "http://localhost:3000";
 
 const useChat = (roomId) => {
+  // console.log(roomId);
   const [messages, setMessages] = useState([]); // Sent and received messages
   const socketRef = useRef();
-
   useEffect(() => {
-    
     // Creates a WebSocket connection
     socketRef.current = socketIOClient(SOCKET_SERVER_URL, {
       query: { roomId },
@@ -17,6 +16,7 @@ const useChat = (roomId) => {
     
     // Listens for incoming messages
     socketRef.current.on(NEW_CHAT_MESSAGE_EVENT, (message) => {
+      console.log(message.body);
         console.log('listening? ')
       const incomingMessage = {
         ...message,
