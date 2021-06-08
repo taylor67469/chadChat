@@ -9,6 +9,7 @@ import Home from "./pages/home"
 import API from "./utils/API"
 import Navbar from "./pages/navbar"
 import Room from "./pages/room"
+import Lobby from "./pages/Lobby"
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [chat, setChat] = useState(true);
@@ -43,7 +44,7 @@ function App() {
           <Login/>
           </Route>
           <Route exact path="/room" component={ChatRoom} />
-          <Route exact path="/room:roomId" component={Room} />
+          <Route exact path="/room/:roomId" component={Lobby} />
         </Switch>
       </div>
     {/* <div>

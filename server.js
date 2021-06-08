@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4000;
 var http = require('http').createServer();
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
 const bodyParser = require('body-parser')
@@ -27,7 +27,7 @@ app.use(routes);
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/chadChatDb");
 
 io.on("connection", (socket) => {
-  
+  console.log('socket io conection running ')
   // Join a conversation
   const { roomId } = socket.handshake.query;
   socket.join(roomId);
