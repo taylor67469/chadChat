@@ -66,10 +66,10 @@ const Login=()=>{
                         <div className="form-group">
                             <input className="form-control" 
                             value={login.username}
-                            name="firstName"
+                            name="username"
                             onChange={handleInputChange}
                             type="text"
-                            placeholder="Your Email *" />
+                            placeholder="Your Username *" />
                         </div>
                         <div className="form-group">
                             <input className="form-control"
