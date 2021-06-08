@@ -18,10 +18,10 @@ function Navbar() {
             <a className="nav-link navtext" aria-current="page" href="/">Home</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link navtext" href="/some/valid/uri">Chat Room</a>
+            <a className="nav-link navtext" href="/room">Chat Room</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link navtext" href="/some/valid/uri">Forum</a>
+            <a className="nav-link navtext" href="/forumpost">Forum</a>
           </li>
           <li className="nav-item">
             <a className="nav-link navtext" href="/login" tabindex="-1" aria-disabled="true">Login</a>
