@@ -11,7 +11,7 @@ import Navbar from "./pages/navbar"
 import Room from "./pages/room"
 import Lobby from "./pages/Lobby"
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const [chat, setChat] = useState(true);
 
     //we need Xavier's code to set the loggedIn variable
