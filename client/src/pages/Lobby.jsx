@@ -1,5 +1,5 @@
 import React from "react";
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 // import "./ChatRoom.css";
 import useChat from "../utils/usechat";
 
@@ -19,7 +19,7 @@ const Lobby = () => {
 
   return (
     <div className="chat-room-container">
-      <a href="/room">Go Back to go to different room</a>
+      <Link to="/room">Go Back to go to different room</Link>
       <h1 className="room-name">Room: {roomId}</h1>
       <div className="messages-container">
         <ol className="messages-list">
