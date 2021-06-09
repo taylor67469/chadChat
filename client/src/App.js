@@ -12,8 +12,10 @@ import Room from "./pages/room"
 import Lobby from "./pages/Lobby"
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [chat, setChat] = useState(true);
-
+  const [chat, setChat] = useState(loggedIn);
+  const userLoggedIn=(user)=>{
+    setLoggedIn(user);
+  }
     //we need Xavier's code to set the loggedIn variable
   // useEffect(()=>{
   //   hitRoute();
@@ -41,7 +43,7 @@ function App() {
           {loggedIn ? <ForumPost/> :<Redirect to = '/signup'/>}
           </Route>
           <Route exact path={"/login"}>
-          <Login/>
+          <Login userLoggedIn={userLoggedIn}/>
           </Route>
           <Route exact path="/room" component={ChatRoom} />
           <Route exact path="/room/:roomId" component={Lobby} />
