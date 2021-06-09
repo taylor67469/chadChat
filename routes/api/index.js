@@ -32,7 +32,7 @@ router.post('/login', async (req,res)=>{
     } else {
         console.log("working");
         // authentication successful
-        return true;
+        return res.json(true);
     }
 })
 module.exports = router;
