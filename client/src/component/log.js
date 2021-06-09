@@ -81,7 +81,6 @@ const Login=()=>{
                             />
                         </div>
                         <div className="form-group">
-                            {/* <input type="submit" className="btnSubmit" value="Login" /> */}
                             <button className="btnSubmit" 
                             onClick={handleFormSubmit}>Login</button>
                         </div>
