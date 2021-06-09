@@ -45,51 +45,10 @@ const Signup =()=>{
   // const render=() =>{
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
-      // <div>
-      //   <p>
-      //     Hello {register.username}
-      //   </p>
-      //   <form className="form">
-      //     <input
-      //       value={register.username}
-      //       name="username"
-      //       onChange={HandleInputChange}
-      //       type="text"
-      //       placeholder="Username"
-      //     />
-      //     <input
-      //       value={this.state.lastName}
-      //       name="lastName"
-      //       onChange={this.handleInputChange}
-      //       type="text"
-      //       placeholder="Last Name"
-      //     />
-      //     <input
-      //       value={register.email}
-      //       name="email"
-      //       onChange={HandleInputChange}
-      //       type="text"
-      //       placeholder="Email"
-      //     />
-      //     <input
-      //       value={register.password}
-      //       name="password"
-      //       onChange={HandleInputChange}
-      //       type="password"
-      //       placeholder="Password"
-      //     />
-      //     <input
-      //       value={this.state.city}
-      //       name="city"
-      //       onChange={this.handleInputChange}
-      //       type="text"
-      //       placeholder="city"
-      //     />
-          
-          
-      //     <button onClick={HandleFormSubmit}>Submit</button>
-      //   </form>
-      // </div>
+        <>  
+    {/* <p>
+      Hello {register.username}
+    </p> */}
 
 <div className="container login-container">
             <div className="row justify-content-center">
@@ -152,6 +111,8 @@ const Signup =()=>{
                 </div>
             </div>
         </div>
+        </>
+        
     );
   }
 
