@@ -1,4 +1,5 @@
 import React, { useEffect,useState } from "react";
+import { Link } from "react-router-dom";
 import api from "../utils/API"
 
 const Login=(props)=>{
@@ -71,7 +72,7 @@ const Login=(props)=>{
                             onClick={handleFormSubmit}>Login</button>
                         </div>
                         <div className="form-group">
-                            <a href="/signup" className="orSign">or SignUp?</a>
+                            <Link to="/signup" className="orSign">or SignUp?</Link>
                         </div>
                     </form>
                 </div>

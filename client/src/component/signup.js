@@ -1,6 +1,7 @@
 import React, {useEffect,useState } from "react";
 import axios from "axios";
 import api from "../utils/API"
+import { Link } from "react-router-dom";
 const Signup =()=>{
   // Setting the component's initial state
 
@@ -90,7 +91,7 @@ const Signup =()=>{
                             onClick={HandleFormSubmit}>SignUp</button>
                         </div>
                         <div className="form-group">
-                            <a href="/login" className="orSign" value="Login">Or Login Here</a>
+                            <Link to="/login" className="orSign" value="Login">Or Login Here</Link>
                         </div>
                     </form>
                 </div>
