@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from "react";
 import api from "../utils/API"
 
-const Login=()=>{
+const Login=(props)=>{
   // Setting the component's initial state
   // state = {
   //   username: "",
@@ -27,6 +27,10 @@ const Login=()=>{
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
     api.getlogin(login)
+    .then(data=>{
+    console.log(data.data)
+    props.userLoggedIn(data.data)
+    })
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
     alert(`Hello ${login.username}`);
     setLogin({
