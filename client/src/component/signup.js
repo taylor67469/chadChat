@@ -77,24 +77,6 @@ const Signup =()=>{
                             />
                         </div>
                         <div className="form-group">
-                            <input className="form-control" 
-                                // value={this.state.lastName}
-                                name="lastName"
-                                // onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="Last name *"
-                            />
-                        </div>
-                        <div className="form-group">
-                            <input type="password" className="form-control"
-                                // value={this.state.city}
-                                name="city"
-                                // onChange={this.handleInputChange}
-                                type="text"
-                                placeholder="City *"
-                            />
-                        </div>
-                        <div className="form-group">
                             <input className="form-control"
                                 value={register.password}
                                 name="password"
