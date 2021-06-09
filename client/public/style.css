@@ -2,6 +2,10 @@ body {
     background-color:rgb(17, 17, 45);
 }
 
+.orangetheme {
+    background:rgb(255, 73, 14);
+}
+
 nav {
     background:rgb(255, 73, 14);
 }

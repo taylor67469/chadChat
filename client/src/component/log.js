@@ -39,28 +39,10 @@ const Login=(props)=>{
   };
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
-      // <div>
-      //   <p>
-      //     Hello {login.username}
-      //   </p>
-      //   <form className="form">
-      //     <input
-      //       value={login.username}
-      //       name="firstName"
-      //       onChange={handleInputChange}
-      //       type="text"
-      //       placeholder="Username"
-      //     />
-      //     <input
-      //       value={login.password}
-      //       name="password"
-      //       onChange={handleInputChange}
-      //       type="password"
-      //       placeholder="password"
-      //     />
-      //     <button onClick={handleFormSubmit}>Submit</button>
-      //   </form>
-      // </div>
+<>
+      {/* <p>
+           Hello {login.username}
+      </p> */}
 
       <div className="container login-container">
             <div className="row justify-content-center">
@@ -85,7 +67,6 @@ const Login=(props)=>{
                             />
                         </div>
                         <div className="form-group">
-                            {/* <input type="submit" className="btnSubmit" value="Login" /> */}
                             <button className="btnSubmit" 
                             onClick={handleFormSubmit}>Login</button>
                         </div>
@@ -96,6 +77,8 @@ const Login=(props)=>{
                 </div>
                 </div>
             </div>
+</>
+
     );
   }
 
