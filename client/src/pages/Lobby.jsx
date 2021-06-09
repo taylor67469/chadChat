@@ -45,7 +45,16 @@ const Lobby = () => {
         Send
       </button>
     </div>
+
   );
 };
+<textarea align = "right">
+  
+<Card >
+  <Card.Body>This is some text within a card body.</Card.Body>
+</Card>
+
+</textarea>
+
 
 export default Lobby;
