@@ -1,6 +1,6 @@
 import React, {useEffect,useState } from "react";
 import axios from "axios";
-
+import api from "../utils/API"
 const Signup =()=>{
   // Setting the component's initial state
 
@@ -34,7 +34,10 @@ const Signup =()=>{
   const HandleFormSubmit = (event) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    
+    api.getsignup(register)
+    .then(res=>{
+      console.log(res);
+    })
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
     alert(`Hello ${register.username}`);
     setRegister({
