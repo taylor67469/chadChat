@@ -2,6 +2,7 @@ const router = require("express").Router();
 const chadRoutes = require("./chadAPI");
 const User= require("../../models/User")
 const bcrypt= require("bcrypt");
+const ForumPost=require("../../models/forumPost");
 // Chad routes /api/chads
 router.use("/chads", chadRoutes);
 router.post('/signup', async (req, res)=>{
@@ -30,10 +31,24 @@ router.post('/login', async (req,res)=>{
         // authentication failed
         return false;
     } else {
-        console.log("working");
+        alert("You are now logged in")
         // authentication successful
         return res.json(true);
     }
 })
+router.post('/forumpost', async (req,res)=>{
+    try{
+        console.log(req.body);
+    const forumData = await ForumPost.create(req.body);
+        res.status(200).json(forumData);
+    }
+    catch (err) 
+    {
+        res.status(400).json(err);
+    }
+})
+router.get('/forum', async(req,res)=>{
+    ForumPost.find()
+})  
 module.exports = router;
 

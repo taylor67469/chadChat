@@ -1,4 +1,4 @@
-function Forum(){
+function Forum(props){
     return(
         <div>
             <h1>Forum Page!</h1>

@@ -20,6 +20,12 @@ export default {
         //   .catch(function (error) {
         //     console.log(error);
         //   })
-      }
+      },
+      getForumPost: function (forumPost){
+        return axios.post("/api/forumpost",forumPost)
+      },
+      getForum: function(forum){
+        return axios.get("/forum",forum)
+      },
       
 }
