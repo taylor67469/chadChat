@@ -36,6 +36,7 @@ router.post('/login', async (req,res)=>{
         return res.json(true);
     }
 })
+//makes forum data  title/description in database
 router.post('/forumpost', async (req,res)=>{
     try{
         console.log(req.body);
@@ -48,7 +49,21 @@ router.post('/forumpost', async (req,res)=>{
     }
 })
 router.get('/forum', async(req,res)=>{
-    ForumPost.find()
+    
+    ForumPost.findAll({
+    
+    }).populate("user").then(data => {
+        //this data includes the user fully populated--email, username, and hashed passowrd are all being returned
+        /**
+         * goal of data to look like:
+         * data = [{title: "", description: "", user: {
+                                                * username: ""
+        * }}]
+         * 
+         */
+        res.json(data);
+
+    })
 })  
 module.exports = router;
 

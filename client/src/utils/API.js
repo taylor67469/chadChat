@@ -24,8 +24,8 @@ export default {
       getForumPost: function (forumPost){
         return axios.post("/api/forumpost",forumPost)
       },
-      getForum: function(forum){
-        return axios.get("/forum",forum)
+      getForum: function(){
+        return axios.get("/api/forum")
       },
       
 }
