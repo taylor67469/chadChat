@@ -13,8 +13,15 @@ import Lobby from "./pages/Lobby"
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [chat, setChat] = useState(loggedIn);
+  const [forumUser,setForumUser]=useState({
+    user: ""
+  })
   const userLoggedIn=(user)=>{
     setLoggedIn(user);
+  }
+  const useForumUser=(myUser)=>{
+    setForumUser(myUser);
+    console.log(myUser);
   }
     //we need Xavier's code to set the loggedIn variable
   // useEffect(()=>{
@@ -40,10 +47,10 @@ function App() {
             {loggedIn ? <Home/> :<Redirect to = '/signup'/>}
         </Route>
           <Route exact path={"/forumpost"}>
-          {loggedIn ? <ForumPost/> :<Redirect to = '/signup'/>}
+          {loggedIn ? <ForumPost forumUser={forumUser}/> :<Redirect to = '/signup'/>}
           </Route>
           <Route exact path={"/login"}>
-          <Login userLoggedIn={userLoggedIn}/>
+          <Login userLoggedIn={userLoggedIn} useForumUser={useForumUser}/>
           </Route>
           <Route exact path="/room" component={ChatRoom} />
           <Route exact path="/room/:roomId" component={Lobby} />
