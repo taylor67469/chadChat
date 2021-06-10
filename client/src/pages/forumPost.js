@@ -8,7 +8,6 @@ function ForumPost(props) {
         title:"",
         description:""
     });
-    console.log(props.forumUser);
     const handleInputChange = (event) => {
         // Getting the value and name of the input which triggered the change
         const { name, value } = event.target;
@@ -22,14 +21,12 @@ function ForumPost(props) {
       const handleFormSubmit = (event) => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         event.preventDefault();
-        // make sure you post
-        // api.getsignup(register)
-        // .then(res=>{
-        //   console.log(res);
-        // })
+        api.getForumPost(forumposted)
+        .then(res=>{
+            console.log(res);
+        })
         // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
         alert(`Thank you ${props.forumUser}, for your post of ${forumposted.title}.`);
-        console.log(forumposted);
         setForumPost({
             title:"",
             description:""
