@@ -60,6 +60,7 @@ function ForumPost(props) {
                 name="submit"
                 onClick={handleFormSubmit}
                 >Post</button>
+               <Link to="/forum"><button onClick={api.getForum}>Go to Forum</button></Link>
             </div>
         </div>
     )
