@@ -106,7 +106,7 @@ const Lobby = () => {
 
       <br/><br/>
 
-      <button onClick={handleSendMessage} className="send-message-button">
+      <button onClick={handleSendMessage} style={{background: "rgb(255, 73, 14)", color: "white"}} className="btnSubmit" >
         Send
       </button>
 
