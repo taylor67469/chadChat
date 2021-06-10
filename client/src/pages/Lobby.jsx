@@ -119,5 +119,16 @@ const Lobby = () => {
 
   );
 };
+<<<<<<< HEAD
+=======
+<textarea align = "right">
+  
+{/* <Card >
+  <Card.Body>This is some text within a card body.</Card.Body>
+</Card> */}
+
+</textarea>
+
+>>>>>>> main
 
 export default Lobby;

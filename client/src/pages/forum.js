@@ -1,4 +1,4 @@
-function Forum(){
+function Forum(props){
     return(
         <>
 <h1 style={{textAlign:"center", fontSize:"70px", letterSpacing:"10px", color:"white"}}>Forum</h1>

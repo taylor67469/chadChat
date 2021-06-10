@@ -29,9 +29,9 @@ const Login=(props)=>{
     event.preventDefault();
     api.getlogin(login)
     .then(data=>{
-    console.log(data.data)
     props.userLoggedIn(data.data)
     })
+    props.useForumUser(login.username);
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
     alert(`Hello ${login.username}`);
     setLogin({
