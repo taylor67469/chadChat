@@ -11,7 +11,7 @@ import Navbar from "./pages/navbar"
 import Room from "./pages/room"
 import Lobby from "./pages/Lobby"
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const [chat, setChat] = useState(loggedIn);
   const [forumUser,setForumUser]=useState({
     user: ""
@@ -46,6 +46,9 @@ function App() {
           <Route exact path={"/home"}>
             {loggedIn ? <Home/> :<Redirect to = '/signup'/>}
         </Route>
+        <Route exact path={"/forum"}>
+          {loggedIn ? <Forum/> :<Redirect to = '/forum'/>}
+          </Route>
           <Route exact path={"/forumpost"}>
           {loggedIn ? <ForumPost forumUser={forumUser}/> :<Redirect to = '/signup'/>}
           </Route>
