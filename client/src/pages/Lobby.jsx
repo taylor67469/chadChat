@@ -18,9 +18,11 @@ const Lobby = () => {
   };
 
   return (
-    <div className="chat-room-container">
-      <Link to="/room">Go Back to go to different room</Link>
-      <h1 className="room-name">Room: {roomId}</h1>
+    <>
+    <h1 style={{textAlign:"center", fontSize:"60px", letterSpacing:"10px", color:"white"}}>Room: {roomId}</h1>
+
+    <div class="container" style={{textAlign: "center"}} >
+    <div className=" col chat-room-container">
       <div className="messages-container">
         <ol className="messages-list">
           {messages.map((message, i) => (
@@ -34,27 +36,88 @@ const Lobby = () => {
             </li>
           ))}
         </ol>
-      </div>
+       
+        <div className="accordion-item border-0">
+                  <h3 className="accordion-header" id="flush-headingTwo" style={{textAlign:"left"}}>
+                      Test
+                  </h3>
+                </div>
+                <div className="accordion-item border-0">
+                  <h3 className="accordion-header" id="flush-headingTwo" style={{textAlign:"right"}}>
+                    Test 1
+                  </h3>
+                </div>
+                <div className="accordion-item border-0">
+                  <h3 className="accordion-header" id="flush-headingTwo" style={{textAlign:"left"}}>
+                      Test 2
+                  </h3>
+                </div>
+                <div className="accordion-item border-0">
+                  <h3 className="accordion-header" id="flush-headingTwo" style={{textAlign:"right"}}>
+                    Test 3
+                  </h3>
+                </div>
+                <div className="accordion-item border-0">
+                  <h3 className="accordion-header" id="flush-headingTwo"style={{textAlign:"left"}}>
+                    Test 4
+                  </h3>
+                </div>
+                <div className="accordion-item border-0">
+                  <h3 className="accordion-header" id="flush-headingTwo" style={{textAlign:"right"}}>
+                    Test 5
+                  </h3>
+                </div>
+                <div className="accordion-item border-0">
+                  <h3 className="accordion-header" id="flush-headingTwo" style={{textAlign:"left"}}>
+                    Test 6
+                  </h3>
+                </div>
+                <div className="accordion-item border-0">
+                  <h3 className="accordion-header" id="flush-headingTwo" style={{textAlign:"right"}}>
+                    Test 7
+                  </h3>
+                </div>
+                <div className="accordion-item border-0">
+                  <h3 className="accordion-header" id="flush-headingTwo" style={{textAlign:"left"}}>
+                    Test 8
+                  </h3>
+                </div>
+                <div className="accordion-item border-0">
+                  <h3 className="accordion-header" id="flush-headingTwo" style={{textAlign:"right"}}>
+                    Test 9
+                  </h3>
+                </div>
+                <div className="accordion-item border-0">
+                  <h3 className="accordion-header" id="flush-headingTwo" style={{textAlign:"left"}}>
+                    Test 10
+                  </h3>
+                </div>
+          </div>
+          <br/>
+
       <textarea
         value={newMessage}
         onChange={handleNewMessageChange}
         placeholder="Write message..."
         className="new-message-input-field"
+        rows="3" cols="132"
+        style={{textAlign: "center", borderRadius: "4px"}}
       />
+
+      <br/><br/>
+
       <button onClick={handleSendMessage} className="send-message-button">
         Send
       </button>
+
+      <br/><br/>
+
+      <Link to="/room">Go Back to go to different room</Link>
     </div>
+    </div>
+    </>
 
   );
 };
-<textarea align = "right">
-  
-<Card >
-  <Card.Body>This is some text within a card body.</Card.Body>
-</Card>
-
-</textarea>
-
 
 export default Lobby;
