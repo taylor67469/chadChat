@@ -1,42 +1,21 @@
+import { Link } from "react-router-dom";
+
 function Forum(props){
     return(
         <>
 <h1 style={{textAlign:"center", fontSize:"70px", letterSpacing:"10px", color:"white"}}>Forum</h1>
-<div className="container-fluid main-center">
+<div className="container-xxl main-center">
 
       <br/>
     
-  <div className="row">
-      {/* <!-- start of users --> */}
-          <div className="col-2">
-            <div className="card-header cardStyle">Users</div>
-          <div className="card-body userstyle">
-          <a href="http://www.google.com" target="_blank">
-            <img src="https://i.pravatar.cc/150?img=4" alt="icon" class="float-left rounded-circle" style={{"width": "40px"}}/>
-            </a><br/>
-            <h4>Zach</h4><hr/><br/>
-          <a href="http://www.google.com" target="_blank">
-            <img src="https://i.pravatar.cc/150?img=3"  alt="icon" class="float-left rounded-circle" style={{"width": "40px"}} />
-            </a><br/>
-            <h4>Alfredo</h4><hr/><br/>
-            <a href="http://www.google.com" target="_blank">
-          <img src="https://i.pravatar.cc/150?img=2"  alt="icon" class="float-left rounded-circle" style={{"width": "40px"}}/>
-          </a><br/>
-          <h4>Angel</h4><hr/><br/>
-          <a href="http://www.google.com" target="_blank">
-          <img src="https://i.pravatar.cc/150?img=12" alt="icon" class="float-left rounded-circle" style={{"width": "40px"}}/>
-          </a><br/>
-          <h4>Xavier</h4><hr/><br/>
-         
-          
-  </div>
-        </div>
+  <div className="row">     
+  
       {/* <!-- end of users --> */}
 
           {/* start of forum post title */}
-          <div className="col-10">
+          <div className="col">
             <div className="card-body border">
-              <h1 className="center">Popular Posts</h1>
+              <h1 className="center" style={{letterSpacing:"7px"}}>Popular Posts</h1>
           </div>
           {/* end of forum post title */}
 
@@ -110,26 +89,51 @@ function Forum(props){
       </div>
     </div>
     <br/>
-<div className="container">
-    <div className="card" style={{width: "18rem"}}>
+
+    {/* cards */}
+
+  <h4 style={{textAlign:"center", letterSpacing:"5px", fontSize:"5", color:"white"}}>New Posts</h4><br/>
+<div className="container" style={{textAlign: "center"}}>
+<div className="row">
+<div className="col">
+    <div className="card" style={{width: "15rem"}}>
   <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <h5 className="card-title">CES 2021</h5>
     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="/somewhere" className="card-link">Card link</a>
-    <a href="/somewhere" className="card-link">Another link</a>
+    <Link href="/somewhere" className="card-link">Card link</Link>
+  </div>
   </div>
 </div>
-<div className="card" style={{width: "18rem"}}>
+<div className="col">
+<div className="card" style={{width: "15rem"}}>
   <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <h5 className="card-title">Electric Kick Scooter</h5>
     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="/somewhere" className="card-link">Card link</a>
-    <a href="/somewhere" className="card-link">Another link</a>
-  </div>
+    <Link href="/somewhere" className="card-link">Card link</Link>
+  </div></div>
+  
+</div>
+<div className="col">
+<div className="card" style={{width: "15rem"}}>
+  <div className="card-body">
+    <h5 className="card-title">Linux Powered Laptop</h5>
+    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <Link href="/somewhere" className="card-link">Card link</Link>
+  </div></div>
+  
+</div>
+
+<div className="col">
+<div className="card" style={{width: "15rem"}}>
+  <div className="card-body">
+    <h5 className="card-title">Whatever</h5>
+    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <Link href="/somewhere" className="card-link">Card link</Link>
+  </div></div>
 </div>
 </div>
+</div>
+<br/>
         </>
     )
 }
