@@ -31,7 +31,7 @@ router.post('/login', async (req,res)=>{
         // authentication failed
         return false;
     } else {
-        alert("You are now logged in")
+        console.log("User logged in");
         // authentication successful
         return res.json(true);
     }
@@ -49,10 +49,8 @@ router.post('/forumpost', async (req,res)=>{
     }
 })
 router.get('/forum', async(req,res)=>{
-    
-    ForumPost.findAll({
-    
-    }).populate("user").then(data => {
+    ForumPost.find().populate().then(data => {
+        
         //this data includes the user fully populated--email, username, and hashed passowrd are all being returned
         /**
          * goal of data to look like:
@@ -61,9 +59,15 @@ router.get('/forum', async(req,res)=>{
         * }}]
          * 
          */
-        res.json(data);
-
-    })
+        //let newArray=[];
+        let newData=data.map(title=>{
+            // newArray=title.title
+            //console.log(title);
+            return title.title
+        })
+        console.log(newData);
+        res.json(newData);
+    })  
 })  
 module.exports = router;
 
