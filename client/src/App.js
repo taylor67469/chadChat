@@ -60,10 +60,10 @@ function App() {
           </Route>
           {/* <Route exact path="/room" component={ChatRoom} /> */}
           <Route exact path="/room/">
-              <ChatRoom/>
+              {loggedIn ?<ChatRoom/>:<Redirect to='/signup' />}
           </Route>
           <Route exact path="/room/:roomId">
-              <Lobby user={forumUser}/>
+              {loggedIn ?<Lobby user={forumUser}/>:<Redirect to='/signup' />}
           </Route>
           {/* <Route exact path="/room/:roomId" component={Lobby} /> */}
         </Switch>
