@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import Forum from "./pages/forum"
 import Signup from "./pages/signup"
@@ -11,19 +11,22 @@ import Navbar from "./pages/navbar"
 import Room from "./pages/room"
 import Lobby from "./pages/Lobby"
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [chat, setChat] = useState(loggedIn);
-  const [forumUser,setForumUser]=useState({
+  const [forumUser, setForumUser] = useState({
     user: ""
   })
-  const userLoggedIn=(user)=>{
+  const userLoggedIn = (user) => {
     setLoggedIn(user);
   }
-  const useForumUser=(myUser)=>{
+  const useForumUser = (myUser) => {
     setForumUser(myUser);
     console.log(myUser);
   }
-    //we need Xavier's code to set the loggedIn variable
+  const userName = (user) => {
+    return user
+  }
+  //we need Xavier's code to set the loggedIn variable
   // useEffect(()=>{
   //   hitRoute();
   // }, [])
@@ -35,31 +38,37 @@ function App() {
   return (
     <Router>
       <div>
-      <Navbar />
+        <Navbar />
         <Switch>
           <Route exact path={"/"}>
-          {loggedIn ? <Home/> :<Redirect to = '/signup'/>}
+            {loggedIn ? <Home /> : <Redirect to='/signup' />}
           </Route>
           <Route exact path={"/signup"}>
-          {loggedIn ? <Redirect to = '/home'/>:<Signup/>}
+            {loggedIn ? <Redirect to='/home' /> : <Signup />}
           </Route>
           <Route exact path={"/home"}>
-            {loggedIn ? <Home/> :<Redirect to = '/signup'/>}
-        </Route>
-        <Route exact path={"/forum"}>
-          {loggedIn ? <Forum/> :<Redirect to = '/forum'/>}
+            {loggedIn ? <Home /> : <Redirect to='/signup' />}
+          </Route>
+          <Route exact path={"/forum"}>
+            {loggedIn ? <Forum /> : <Redirect to='/forum' />}
           </Route>
           <Route exact path={"/forumpost"}>
-          {loggedIn ? <ForumPost forumUser={forumUser}/> :<Redirect to = '/signup'/>}
+            {loggedIn ? <ForumPost forumUser={forumUser} /> : <Redirect to='/signup' />}
           </Route>
           <Route exact path={"/login"}>
-          <Login userLoggedIn={userLoggedIn} useForumUser={useForumUser}/>
+            <Login userLoggedIn={userLoggedIn} useForumUser={useForumUser} />
           </Route>
-          <Route exact path="/room" component={ChatRoom} />
-          <Route exact path="/room/:roomId" component={Lobby} />
+          {/* <Route exact path="/room" component={ChatRoom} /> */}
+          <Route exact path="/room/">
+              <ChatRoom/>
+          </Route>
+          <Route exact path="/room/:roomId">
+              <Lobby user={forumUser}/>
+          </Route>
+          {/* <Route exact path="/room/:roomId" component={Lobby} /> */}
         </Switch>
       </div>
-    {/* <div>
+      {/* <div>
       <Switch>
         <Route exact path={"/"}>
           {loggedIn ? <Redirect to ="/home"/> : <Signup/>}
