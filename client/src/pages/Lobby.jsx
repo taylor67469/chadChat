@@ -5,14 +5,16 @@ import useChat from "../utils/usechat";
 import ScrollToBottom from "react-scroll-to-bottom";
 const Lobby = (props) => {
   const { roomId } = useParams();
-  const { messages, sendMessage } = useChat(roomId);
+  const { messages, sendMessage,setMessages } = useChat(roomId);
   const [newMessage, setNewMessage] = React.useState("");
   const handleNewMessageChange = (event) => {
     setNewMessage(event.target.value);
   };
 
   const handleSendMessage = () => {
-    sendMessage(newMessage);
+    console.log(messages);
+    // console.log(messages);
+    sendMessage(newMessage,props.user);
     setNewMessage("");
   };
 
@@ -31,7 +33,7 @@ const Lobby = (props) => {
                     className={`message-item ${message.ownedByCurrentUser ? "my-message" : "received-message"
                       }`} style={{ color: "white", textAlign: "middle", fontSize: "3  0px" }}
                   >
-                    {props.user}: {message.body}
+                    {message.user}: {message.body}
                   </li>
                 ))}
               </ScrollToBottom>
