@@ -21,20 +21,10 @@ function App() {
   }
   const useForumUser = (myUser) => {
     setForumUser(myUser);
-    console.log(myUser);
   }
   const userName = (user) => {
     return user
   }
-  //we need Xavier's code to set the loggedIn variable
-  // useEffect(()=>{
-  //   hitRoute();
-  // }, [])
-  // function hitRoute(){
-  //   API.getHomeRoute().then(res=>{
-  //     console.log("we are hitting the home route");
-  //   })
-  // }
   return (
     <Router>
       <div>

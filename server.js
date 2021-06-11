@@ -30,7 +30,6 @@ io.on("connection", (socket) => {
 
   // Listen for new messages
   socket.on(NEW_CHAT_MESSAGE_EVENT, (data) => {
-    console.log(data,"sadasdasDASDAS");
     io.in(roomId).emit(NEW_CHAT_MESSAGE_EVENT, data);
   });
 
