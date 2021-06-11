@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import socketIOClient from "socket.io-client";
 
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage"; // Name of the event
-const SOCKET_SERVER_URL = "https://chadchat1234.herokuapp.com:34509";
+const SOCKET_SERVER_URL = "https://chadchat1234.herokuapp.com";
 
 const useChat = (roomId) => {
   // console.log(roomId);
