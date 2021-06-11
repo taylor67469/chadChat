@@ -16,9 +16,6 @@ router.post('/signup', async (req, res)=>{
     catch (err) {
         res.status(400).json(err);
       }
-    /*console.log(req.body);  ideally, this is going to log the username, userpassword, user email
-    talk to the database and create such user profile.
-    then res.send("User created")*/
 })
 
 router.post('/login', async (req,res)=>{
@@ -52,21 +49,11 @@ router.get('/forum', async(req,res)=>{
     ForumPost.find().populate().then(data => {
         
         //this data includes the user fully populated--email, username, and hashed passowrd are all being returned
-        /**
-         * goal of data to look like:
-         * data = [{title: "", description: "", user: {
-                                                * username: ""
-        * }}]
-         * 
-         */
-        //let newArray=[];
         let newData=data.map(title=>{
-            // newArray=title.title
-            //console.log(title);
-            return title.title
+            return {title:title.title,description:title.description}
         })
         console.log(newData);
-        res.json(newData);
+        return res.json(newData);
     })  
 })  
 module.exports = router;

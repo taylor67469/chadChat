@@ -19,26 +19,16 @@ const Signup =()=>{
   const HandleInputChange = (event) => {
     // Getting the value and name of the input which triggered the change
     // Updating the input's state
-    // useEffect((event)=>{
-      //let loginCred = {}
       const { name, value } = event.target;
-      // console.log(name);
-      // console.log(value);
       setRegister({...register, [name]:value})
-      // setRegister({
-      //   [name]: value
-      // });
-    // },[])
+      
     
   };
 
   const HandleFormSubmit = (event) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    api.getsignup(register)
-    .then(res=>{
-      console.log(res);
-    })
+    api.getsignup(register);
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
     alert(`Hello ${register.username}`);
     setRegister({
@@ -50,9 +40,6 @@ const Signup =()=>{
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
         <>  
-    {/* <p>
-      Hello {register.username}
-    </p> */}
 
 <div className="container login-container">
             <div className="row justify-content-center">

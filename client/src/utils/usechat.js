@@ -4,10 +4,9 @@ import API from './API';
 
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage"; // Name of the event
 const SOCKET_SERVER_URL = "https://chadchat1234.herokuapp.com";
-// const SOCKET_SERVER_URL = "http://localhost:3000";
+// const SOCKET_SERVER_URL = "http://localhost:3000"; for localhost
 
 const useChat = (roomId) => {
-  // console.log(roomId);
   const [messages, setMessages] = useState([]); // Sent and received messages
   const socketRef = useRef();
   useEffect(() => {

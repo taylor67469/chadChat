@@ -12,8 +12,6 @@ const Lobby = (props) => {
   };
 
   const handleSendMessage = () => {
-    console.log(messages);
-    // console.log(messages);
     sendMessage(newMessage,props.user);
     setNewMessage("");
   };
