@@ -5,7 +5,9 @@
   * [Story](#story)
   * [Demo](#demo)
   * [Deployment](#deployment)
+  * [Future](#future)
   * [Contributions](#contributions)
+
 ## Deployment
 [ChadChat](https://chadchat1234.herokuapp.com/)
 This app is deployed live on Heroku! (Click Link!)
@@ -34,11 +36,22 @@ This app is deployed live on Heroku! (Click Link!)
       in the room they wish to join. 
     - Once the user joins a room the user will get redirected to the room where they
       are able to chat with other users in the same room.
+## Testing
+    - Username:tester1234
+    - Password: password
 ## Demo
 <img src="./images/home.png" style="width: 700px">
 <img src="./images/forum.png" style="width: 700px">
+<img src="./images/chat.png" style="width: 750px">
 <img src="./images/login.png" style="width: 750px">
-<img src="" style="width: 750px">
+
+## Future
+    Allow users to view chat history.
+    Allow users to view oother users to view online users.
+    Allow users to view users conected to chat room.
+    Post popular foum posts to home page.
+    Show live message previews on the home page.
+    
 
 ## Contributions
 [Zachary Taylor](https://github.com/taylor67469)
