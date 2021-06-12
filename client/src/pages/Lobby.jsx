@@ -101,7 +101,7 @@ const Lobby = (props) => {
             placeholder="Write message..."
             className="new-message-input-field"
             rows="3" cols="132"
-            style={{ textAlign: "center", borderRadius: "4px" }}
+            style={{ textAlign: "center", borderRadius: "4px", width:"100%" }}
           />
 
           <br /><br />

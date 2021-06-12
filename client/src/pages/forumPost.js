@@ -35,10 +35,10 @@ function ForumPost(props) {
     return (
         <div>
 
-            <div className="card">
-                <div className="card-header">
+            <div className="card ml-auto mr-auto" style={{width:"70%"}}>
+                <div className="card-header center" style={{width:"100%"}}>
                     <h1>Forum Title</h1>
-                    <input 
+                    <input style={{width:"100%",textAlign:"center"}}
                     type="text" 
                     name="title" 
                     placeholder="Forum Title" 
@@ -46,21 +46,21 @@ function ForumPost(props) {
                     onChange={handleInputChange}
                     ></input>
                 </div>
-                <div className="card-body">
-                    <h1>Forum Post</h1>
+                <div className="card-body center">
+                    <h1 >Forum Post</h1>
                     <input type="text" 
                     name="description" 
                     placeholder="Forum Post" 
-                    id="fPost"
+                    id="fPost"style={{width:"100%",textAlign:"center"}}
                     onChange={handleInputChange}
                     ></input>
                     
                 </div>
-                <button type="submit" 
+                <button type="submit" style={{width:"100%"}} 
                 name="submit"
                 onClick={handleFormSubmit}
                 >Post</button>
-               <Link to="/forum"><button onClick={api.getForum}>Go to Forum</button></Link>
+               <Link to="/forum"><button onClick={api.getForum} style={{width:"100%"}}>Go to Forum</button></Link>
             </div>
         </div>
     )
