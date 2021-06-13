@@ -13,14 +13,14 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <input
+      <input style={{textAlign:"center",height:"30px"}}
         type="text"
         placeholder="Room"
         value={roomName}
         onChange={handleRoomNameChange}
         className="text-input-field"
       />
-      <Link to={`/room/${roomName}`} className="enter-room-button"
+      <Link to={`/room/${roomName}`} className="enter-room-button" style={{color:"white",backgroundColor:"rgb(255, 73, 14)",marginLeft:"10px"}}
      
       >
         Join room
