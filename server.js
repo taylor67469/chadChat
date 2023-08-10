@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/chadChatDb");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/chadChatDb",{useNewUrlParser: true, useUnifiedTopology: true});
 
 io.on("connection", (socket) => {
   console.log('socket io conection running ')
