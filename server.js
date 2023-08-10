@@ -7,7 +7,6 @@ var http = require('http').createServer(app);
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
 const bodyParser = require('body-parser')
 const io = require("socket.io")(http);
-const uri = process.env.MONGODB_URI;
 app.use(bodyParser.json())
 
 // Define middleware here
